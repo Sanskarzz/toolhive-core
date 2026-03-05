@@ -230,7 +230,7 @@ func TestRegistrySchemaValidation(t *testing.T) {
 			errorContains: "description",
 		},
 		{
-			name: "invalid server name pattern",
+			name: "non-matching server name passes without additionalProperties restriction",
 			registryJSON: `{
 				"version": "1.0.0",
 				"last_updated": "2025-01-01T00:00:00Z",
@@ -245,8 +245,7 @@ func TestRegistrySchemaValidation(t *testing.T) {
 					}
 				}
 			}`,
-			expectError:   true,
-			errorContains: "Additional property",
+			expectError: false,
 		},
 		{
 			name: "valid remote server",
