@@ -38,7 +38,11 @@
     "status": {
       "type": "string",
       "description": "Current status of the skill",
-      "enum": ["active", "deprecated", "archived"],
+      "enum": [
+        "active",
+        "deprecated",
+        "archived"
+      ],
       "default": "active"
     },
     "title": {
@@ -92,17 +96,21 @@
       "additionalProperties": true
     }
   },
-  "additionalProperties": false,
   "$defs": {
     "skill_package": {
       "type": "object",
       "description": "Distribution package reference (OCI or Git)",
-      "required": ["registryType"],
+      "required": [
+        "registryType"
+      ],
       "properties": {
         "registryType": {
           "type": "string",
           "description": "Package registry type",
-          "enum": ["oci", "git"]
+          "enum": [
+            "oci",
+            "git"
+          ]
         },
         "identifier": {
           "type": "string",
@@ -133,13 +141,14 @@
           "type": "string",
           "description": "Path within the repository"
         }
-      },
-      "additionalProperties": false
+      }
     },
     "skill_icon": {
       "type": "object",
       "description": "Display icon for the skill",
-      "required": ["src"],
+      "required": [
+        "src"
+      ],
       "properties": {
         "src": {
           "type": "string",
@@ -157,8 +166,7 @@
           "type": "string",
           "description": "Accessibility label for the icon"
         }
-      },
-      "additionalProperties": false
+      }
     },
     "skill_repository": {
       "type": "object",
@@ -173,8 +181,7 @@
           "type": "string",
           "description": "Repository type (e.g. git)"
         }
-      },
-      "additionalProperties": false
+      }
     }
   }
 }
