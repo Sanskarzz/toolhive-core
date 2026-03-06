@@ -235,6 +235,7 @@ func createRemoteExtensions(remoteMetadata *registry.RemoteServerMetadata) map[s
 		CustomMetadata:  remoteMetadata.CustomMetadata,
 		OAuthConfig:     remoteMetadata.OAuthConfig,
 		EnvVars:         remoteMetadata.EnvVars,
+		ProxyPort:       remoteMetadata.ProxyPort,
 	}
 	return buildPublisherExtensionsMap(ext, remoteMetadata.URL)
 }

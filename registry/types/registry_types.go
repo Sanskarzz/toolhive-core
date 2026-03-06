@@ -197,6 +197,9 @@ type RemoteServerMetadata struct {
 	BaseServerMetadata
 	// URL is the endpoint URL for the remote MCP server (e.g., https://api.example.com/mcp)
 	URL string `json:"url" yaml:"url"`
+	// ProxyPort is the port for the HTTP proxy to listen on (host port)
+	// If not specified, a random available port will be assigned
+	ProxyPort int `json:"proxy_port,omitempty" yaml:"proxy_port,omitempty"`
 	// Headers defines HTTP headers that can be passed to the remote server for authentication
 	// These are used with the thv proxy command's authentication features
 	Headers []*Header `json:"headers,omitempty" yaml:"headers,omitempty"`
