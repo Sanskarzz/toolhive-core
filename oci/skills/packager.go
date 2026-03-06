@@ -325,7 +325,7 @@ func collectSkillFiles(dir string) (map[string][]byte, error) {
 			return fmt.Errorf("skill directory exceeds maximum of %d files", maxSkillFiles)
 		}
 
-		content, err := os.ReadFile(path) //#nosec G304 -- path from WalkDir, symlink-checked
+		content, err := os.ReadFile(path) //#nosec G304,G122 -- path from WalkDir, symlink-checked
 		if err != nil {
 			return fmt.Errorf("reading %s: %w", relPath, err)
 		}
