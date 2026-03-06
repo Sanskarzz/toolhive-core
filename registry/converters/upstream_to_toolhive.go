@@ -314,6 +314,7 @@ func extractRemoteExtensions(serverJSON *upstream.ServerJSON, remoteMetadata *re
 	applyBaseExtensions(ext, &remoteMetadata.BaseServerMetadata)
 	remoteMetadata.OAuthConfig = ext.OAuthConfig
 	remoteMetadata.EnvVars = ext.EnvVars
+	remoteMetadata.ProxyPort = ext.ProxyPort
 }
 
 // getStacklokServerExtensions retrieves and deserializes the first stacklok extension data

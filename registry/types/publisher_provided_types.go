@@ -21,7 +21,7 @@ import (
 // Permissions, Args, Provenance, DockerTags, ProxyPort, ToolDefinitions
 //
 // Remote servers may use: Status, Tier, Tools, Tags, Metadata, CustomMetadata,
-// OAuthConfig, EnvVars, ToolDefinitions
+// OAuthConfig, EnvVars, ProxyPort, ToolDefinitions
 type ServerExtensions struct {
 	// Status indicates whether the server is active or deprecated (required)
 	Status string `json:"status" yaml:"status"`
@@ -54,7 +54,8 @@ type ServerExtensions struct {
 	Provenance *Provenance `json:"provenance,omitempty" yaml:"provenance,omitempty"`
 	// DockerTags lists available Docker tags for container-based servers
 	DockerTags []string `json:"docker_tags,omitempty" yaml:"docker_tags,omitempty"`
-	// ProxyPort is the HTTP proxy port for container-based servers (1-65535)
+	// ProxyPort is the HTTP proxy port (1-65535). Applies to both container-based
+	// and remote servers.
 	ProxyPort int `json:"proxy_port,omitempty" yaml:"proxy_port,omitempty"`
 
 	// Remote server-specific fields (only for servers keyed by URL)
