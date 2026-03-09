@@ -245,8 +245,8 @@ func TestRegistry_ServerMetadataInterface(t *testing.T) {
 	assert.Equal(t, "sse", sa.GetTransport())
 	assert.Equal(t, []string{"tool_a1", "tool_a2"}, sa.GetTools())
 	assert.Equal(t, []string{"ai"}, sa.GetTags())
-	assert.Equal(t, "", sa.GetTitle())       // not set in fixture
-	assert.Equal(t, "", sa.GetOverview())    // not set in fixture
+	assert.Equal(t, "", sa.GetTitle())    // not set in fixture
+	assert.Equal(t, "", sa.GetOverview()) // not set in fixture
 	assert.Equal(t, "", sa.GetRepositoryURL())
 	assert.Nil(t, sa.GetToolDefinitions())
 	assert.Nil(t, sa.GetCustomMetadata())
